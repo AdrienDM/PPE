@@ -1,0 +1,49 @@
+ package COMMANDE;
+
+import java.io.Serializable;
+import java.util.Scanner;
+
+import ARTICLE.Article;
+import CLIENT.Client;
+
+public class Commande implements Serializable {
+	
+	private int numCommande;
+	private Client leClient;
+	private Article lArticle;
+    public Commande(){}
+	public Commande(int num,Client cli,Article art){
+		
+		this.numCommande=num;
+		this.leClient=cli;
+		this.lArticle=art;
+	}
+	public void afficherCommande(){
+		System.out.println("Numero:"+this.numCommande);
+		this.leClient.afficherClient();
+		this.lArticle.afficherArticle();
+		
+	}
+	public String getNomClient(){
+	return	this.leClient.getNom();
+	}
+	public String getNomArt(){
+		return this.lArticle.getNomArt();
+	}
+
+	public int getNum(){
+		return this.numCommande;
+	}
+	public void saisirCommande(){
+		Scanner scan =new Scanner(System.in);
+		String nomClient;
+		String nomArt;
+		System.out.println(" Saisir le nom du client à selectionner: ");
+		nomClient=scan.nextLine();
+		
+		
+		System.out.println(" Saisir le nom de l'article à selectionner: ");
+		nomArt=scan.nextLine();
+		
+	}
+}

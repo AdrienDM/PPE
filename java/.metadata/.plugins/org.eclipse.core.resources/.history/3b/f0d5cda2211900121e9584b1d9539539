@@ -1,0 +1,59 @@
+package COMMANDE;
+import java.io.Serializable;
+import java.util.Collections;
+import java.util.Scanner;
+
+/**class  Client */
+public  class Client implements Serializable,Comparable<Client>  {
+	/**Attribut de la class client*/
+	private String nomClient;
+	private String adrClient;	
+	
+	/** Constructeur Client*/
+	public Client(String unNom,String uneAdresse){
+		
+		this.nomClient=unNom;
+		this.adrClient=uneAdresse;
+	}
+	/**Surcharge constructeur Client */
+	public Client(){}
+	/**Accesseur attribut nom*/
+	public String getNom(){
+		return nomClient;
+	}
+	/**Mutateur attribut nom */
+	public void setNom(String unNom){
+		this.nomClient=unNom;
+	}
+	/**Accesseur attribut adresse*/
+	public String getAdresse(){
+		return adrClient;
+	}
+	/**Mutateur attribut adresse */
+	public void setAdresse(String uneAdresse){
+		this.adrClient=uneAdresse;
+	}
+	
+	public void saisirClient(){
+		Scanner scan =new Scanner(System.in);
+		System.out.println("Saisir nom client");
+		this.nomClient=scan.nextLine();
+		System.out.println("Saisir adresse client");
+		this.adrClient=scan.nextLine();			
+	}
+	
+	public void afficherClient(){
+		
+      System.out.println("Nom: "+ this.nomClient +" "+ "Adresse: " +this.adrClient);
+    }
+	
+	public int compareTo(Client cli){
+		
+		return (this.nomClient.compareTo(cli.nomClient));
+		
+	}
+	
+		
+	}
+
+
